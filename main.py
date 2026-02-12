@@ -56,13 +56,9 @@ def upload_row(date_str: str, close: float, change_pct: float):
 
 def main():
     date_str, close, change_pct = fetch_kospi_latest()
-
-    if already_uploaded(date_str):
-        print(f"Skip: already uploaded for {date_str}")
-        return
-
     upload_row(date_str, close, change_pct)
     print(f"Uploaded: {date_str} Close={close:.2f} ChangePct={change_pct:.2f}%")
+
 
 if __name__ == "__main__":
     main()
